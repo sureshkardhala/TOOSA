@@ -1,0 +1,173 @@
+
+  
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 06, 2019 at 09:10 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `toosa@database`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `team`
+--
+
+CREATE TABLE `team` (
+  `id` int(11)  UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `designation` varchar(255) NOT NULL,
+  `description` varchar(2550) NOT NULL,
+  `choice` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `twitter` varchar(255) NOT NULL,
+  `facebook` varchar(255) NOT NULL,
+  `linkedin` varchar(255) NOT NULL,
+  `instagram` varchar(255) NOT NULL,
+  `uploaded_on` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+
+
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `photos`
+--
+
+CREATE TABLE `photos` (
+  `id` int(11)  UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `choice` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `uploaded_on` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11)  UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(255) NOT NULL,
+  `message` varchar(2550) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `uploaded_on` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+
+CREATE TABLE `request` (
+  `id` int(11)  UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `book` varchar(255) NOT NULL,
+  `description` varchar(2550) NOT NULL,
+  `uploaded_on` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(11)  UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `event` varchar(255) NOT NULL,
+   `description` varchar(2550) NOT NULL,
+  `choice` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `uploaded_on` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `members`
+--
+
+CREATE TABLE `members` (
+  `id` int(11)  UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `designation` varchar(255) NOT NULL,
+  `inistitution` varchar(255) NOT NULL,
+  `description` varchar(2550) NOT NULL,
+  `batch` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `dob` varchar(255) NOT NULL,
+  `cv` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `twitter` varchar(255) NOT NULL,
+  `facebook` varchar(255) NOT NULL,
+  `linkedin` varchar(255) NOT NULL,
+  `instagram` varchar(255) NOT NULL,
+  `uploaded_on` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `members` (`name`, `password`, `designation`, `email`, `image`) VALUES
+('TOOSA@admin', 'TOOSA@admin2018', 'admin', 'TOOSAadmin2018@gmail.com', 'toosa.jpg');
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books`
+--
+
+CREATE TABLE `books` (
+  `id` int(11)  UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `description` varchar(2550) NOT NULL,
+  `publisher` varchar(255) NOT NULL,
+  `edition` varchar(255) NOT NULL,
+  `categories` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `uploaded_on` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
